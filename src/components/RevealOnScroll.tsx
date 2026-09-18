@@ -18,16 +18,24 @@ export const RevealOnScroll: React.FC<RevealOnScrollProps> = ({
     const element = ref.current;
     if (!element) return;
 
+    // Immediately reveal if element is already within viewport
+    const rect = element.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      setIsVisible(true);
+    }
+
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.unobserve(element);
-        }
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            observer.unobserve(entry.target);
+          }
+        });
       },
       {
-        threshold: 0.1,
-        rootMargin: '0px 0px -40px 0px',
+        threshold: 0.05,
+        rootMargin: '80px 0px 0px 0px',
       }
     );
 
@@ -42,14 +50,14 @@ export const RevealOnScroll: React.FC<RevealOnScrollProps> = ({
     <div
       ref={ref}
       style={{ 
-        transitionDuration: '750ms',
+        transitionDuration: '800ms',
         transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)',
         transitionDelay: `${delay}ms` 
       }}
-      className={`transition-all transform will-change-transform ${
+      className={`transition-all transform will-change-transform duration-700 ${
         isVisible 
-          ? 'opacity-100 translate-y-0 filter blur-0' 
-          : 'opacity-0 translate-y-8 filter blur-[0.5px]'
+          ? 'opacity-100 translate-y-0 filter blur-0 scale-100' 
+          : 'opacity-0 translate-y-6 filter blur-[0.5px] scale-[0.99]'
       } ${className}`}
     >
       {children}

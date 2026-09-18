@@ -85,13 +85,13 @@ export const Hero: React.FC = () => {
           <div className="lg:col-span-5 flex justify-center items-center">
             <div className="relative group">
               {/* Outer soft ambient glowing aura */}
-              <div className="absolute -inset-6 rounded-full bg-gradient-to-tr from-red-600/35 via-rose-500/25 to-amber-500/20 blur-3xl opacity-70 group-hover:opacity-95 transition-opacity duration-1000 animate-pulse-slow"></div>
+              <div className="absolute -inset-6 rounded-full bg-gradient-to-tr from-red-600/40 via-rose-500/30 to-amber-500/20 blur-3xl opacity-75 group-hover:opacity-100 transition-opacity duration-1000 animate-pulse-slow"></div>
 
-              {/* Animated rotating border / halo ring */}
-              <div className="absolute -inset-1.5 rounded-full bg-gradient-to-r from-red-600 via-rose-500 to-amber-500 opacity-75 blur-[2px] animate-spin-slow group-hover:opacity-100 transition duration-500"></div>
+              {/* Animated rotating conic border ring beam */}
+              <div className="absolute -inset-2 rounded-full bg-[conic-gradient(from_0deg,#ef4444,#f43f5e,#f59e0b,#ef4444)] opacity-85 blur-[2px] animate-spin-slow group-hover:opacity-100 transition duration-500"></div>
 
               {/* High-quality Circular Portrait Container */}
-              <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-88 md:h-88 lg:w-96 lg:h-96 rounded-full overflow-hidden p-1.5 bg-slate-900/90 dark:bg-black shadow-2xl border border-red-500/40">
+              <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 aspect-square rounded-full overflow-hidden p-1.5 bg-slate-900/90 dark:bg-black shadow-2xl border border-red-500/50">
                 <div className="w-full h-full rounded-full overflow-hidden bg-black flex items-center justify-center">
                   <img
                     src={personal.profileImage}
