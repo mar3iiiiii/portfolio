@@ -2,10 +2,6 @@ import React from 'react';
 import { 
   ArrowRight, 
   MapPin, 
-  CheckCircle2, 
-  Layers, 
-  Database, 
-  Cloud, 
   ExternalLink,
   Github 
 } from 'lucide-react';
@@ -44,23 +40,8 @@ export const Hero: React.FC = () => {
             </div>
 
             <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300/90 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-              Computer and Control Engineering student specializing in full-stack web development with PHP & MySQL and enterprise cloud infrastructure certified by Huawei ICT Academy.
+              Computer and Control Engineer specializing in full-stack web development with PHP & MySQL, enterprise cloud infrastructure certified by Huawei ICT Academy, and cybersecurity vulnerability assessment.
             </p>
-
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 pt-1">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-xs font-mono bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300">
-                <Database className="w-3.5 h-3.5 text-red-500" />
-                Full Stack PHP (NTI/ITIDA 95%)
-              </span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-xs font-mono bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300">
-                <Cloud className="w-3.5 h-3.5 text-rose-500" />
-                Huawei HCIA-Cloud Computing V5.5
-              </span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-xs font-mono bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300">
-                <Layers className="w-3.5 h-3.5 text-purple-500" />
-                Control & Computing Systems
-              </span>
-            </div>
 
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-3">
               <a
@@ -101,63 +82,18 @@ export const Hero: React.FC = () => {
             </div>
           </div>
 
-          <div className="lg:col-span-5 flex justify-center">
-            <div className="relative w-full max-w-sm">
-              <div className="absolute -inset-1.5 bg-gradient-to-r from-red-600 via-rose-500 to-amber-500 rounded-3xl blur-lg opacity-30 group-hover:opacity-60 transition duration-1000"></div>
+          <div className="lg:col-span-5 flex justify-center items-center">
+            <div className="relative group">
+              {/* Elegant ambient glow behind photo */}
+              <div className="absolute -inset-4 bg-gradient-to-tr from-red-600/30 via-rose-500/20 to-amber-500/20 rounded-3xl blur-2xl opacity-60 group-hover:opacity-85 transition duration-700"></div>
 
-              <div className="relative bg-white dark:bg-[#0c1222] border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-2xl space-y-6">
-                <div className="relative flex flex-col items-center">
-                  <div className="relative w-40 h-40 rounded-2xl overflow-hidden border-2 border-red-500/30 p-1 bg-gradient-to-b from-red-500/20 to-transparent">
-                    <img
-                      src={personal.profileImage}
-                      alt={personal.name}
-                      className="w-full h-full object-cover rounded-xl"
-                    />
-                    <div className="absolute bottom-2 right-2 w-4 h-4 rounded-full bg-red-500 border-2 border-white dark:border-[#0c1222] shadow"></div>
-                  </div>
-
-                  <h3 className="mt-4 text-xl font-bold text-slate-900 dark:text-white">
-                    {personal.name}
-                  </h3>
-                  <p className="text-xs font-mono text-red-600 dark:text-red-400 mt-0.5">
-                    Class of 2027 • El Shorouk Academy
-                  </p>
-                </div>
-
-                <div className="grid grid-cols-2 gap-3 pt-2">
-                  {personal.keyHighlights.slice(0, 4).map((highlight, idx) => (
-                    <div
-                      key={idx}
-                      className="bg-slate-50 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800/80 rounded-xl p-3 text-center"
-                    >
-                      <div className="text-sm font-bold text-slate-900 dark:text-white font-mono">
-                        {highlight.value}
-                      </div>
-                      <div className="text-[11px] font-medium text-red-600 dark:text-red-400 mt-0.5">
-                        {highlight.label}
-                      </div>
-                      <div className="text-[10px] text-slate-400 dark:text-slate-500 truncate">
-                        {highlight.subtext}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="pt-2 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
-                  <span className="flex items-center gap-1.5 text-red-600 dark:text-red-400 font-medium">
-                    <CheckCircle2 className="w-4 h-4" />
-                    Verified Official Credentials
-                  </span>
-                  <a
-                    href={personal.linkedinUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-slate-900 dark:hover:text-white underline"
-                  >
-                    LinkedIn Profile
-                  </a>
-                </div>
-
+              {/* Clean, large portrait photo without border card */}
+              <div className="relative w-72 sm:w-80 md:w-96 aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl">
+                <img
+                  src={personal.profileImage}
+                  alt={personal.name}
+                  className="w-full h-full object-cover object-top transition duration-500 group-hover:scale-105"
+                />
               </div>
             </div>
           </div>

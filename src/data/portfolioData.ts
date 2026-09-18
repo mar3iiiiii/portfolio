@@ -56,15 +56,15 @@ export interface SkillCategory {
 export const PORTFOLIO_DATA = {
   personal: {
     name: "Ahmed Marei",
-    title: "Computer & Control Engineering Student",
+    title: "Computer & Control Engineer",
     subTitle: "Full Stack Web Developer (PHP/MySQL) • Cloud Associate (Huawei HCIA) • Vulnerability Analyst & Penetration Tester (DEPI)",
-    headline: "Computer and Control Engineering student at El Shorouk Academy (Class of 2027) with verified expertise in Full Stack Web Development (NTI & ITIDA 95%), Cloud Computing (Huawei HCIA), and Infrastructure & Security (DEPI Vulnerability Analyst & Penetration Tester).",
+    headline: "Computer and Control Engineer at El Shorouk Academy (Class of 2027) with verified expertise in Full Stack Web Development (NTI & ITIDA 95%), Cloud Computing (Huawei HCIA), and Infrastructure & Security (DEPI Vulnerability Analyst & Penetration Tester).",
     location: "Cairo / El Shorouk, Egypt",
     linkedinUrl: "https://www.linkedin.com/in/ahmed-marei-m",
     githubUrl: "https://github.com/mar3iiiiii",
     profileImage: profileImage,
     statusBadge: "Open to Practical Training & Internships",
-    aboutSummary: `I am a Computer and Control Engineering student at El Shorouk Academy (Class of 2027) focused on building secure full-stack web applications, scalable cloud computing architectures, and conducting infrastructure security assessments.
+    aboutSummary: `I am a Computer and Control Engineer at El Shorouk Academy (Class of 2027) focused on building secure full-stack web applications, scalable cloud computing architectures, and conducting infrastructure security assessments.
 
 I hold an official Summer Training Certificate in Full Stack Web Development using PHP from the National Telecommunication Institute (NTI) & ITIDA, completing 120 hours (90 technical + 30 freelancing) with an outstanding 95% final score. Additionally, I am certified in HCIA-Cloud Computing V5.5 by Huawei ICT Academy, mastering computing virtualization, distributed storage, and cloud infrastructure operations.
 
@@ -106,7 +106,7 @@ Furthermore, I am a graduate of Round 5 of the Digital Egypt Pioneers Initiative
       hours: "120 Total Hours (90 Technical + 30 Freelancing)",
       description: "Completed an intensive 120-hour professional summer training course jointly certified by ITIDA and NTI, mastering end-to-end full-stack web engineering and digital freelancing.",
       achievements: [
-        "Achieved an outstanding 95% final evaluation score (Student ID: 325230).",
+        "Achieved an outstanding 95% final evaluation score (ID: 325230).",
         "Engineered full-stack applications with PHP backend, MySQL relational databases, session auth, and responsive UI.",
         "Completed 30 dedicated hours in freelancing, client communication, and project delivery under ITIDA guidance.",
         "Jointly signed by Eng. Ahmed El Zaher (ITIDA CEO) and Prof. Ahmed Khattab (NTI Director)."
@@ -253,7 +253,7 @@ Furthermore, I am a graduate of Round 5 of the Digital Egypt Pioneers Initiative
       issueDate: "27 August 2026",
       score: "95% Final Score",
       hours: "120 Total Hours (90 Technical + 30 Freelancing)",
-      code: "Student ID: 325230",
+      code: "ID: 325230",
       details: "Official Summer Training Certificate in Full Stack Web Development using PHP (02 to 27 August 2026). Jointly awarded with ITIDA and signed by Eng. Ahmed El Zaher (ITIDA CEO) and Prof. Ahmed Khattab (NTI Director).",
       certificateImage: ntiCertImage,
       tags: ["PHP", "MySQL", "Full Stack", "ITIDA", "NTI", "95% Score", "Freelancing"]
