@@ -49,7 +49,7 @@ export const Navbar: React.FC = () => {
             href="#"
             className="flex items-center gap-2.5 group text-slate-900 dark:text-white font-bold text-lg tracking-tight"
           >
-            <div className="w-9 h-9 rounded-full overflow-hidden border-2 border-emerald-500/40 group-hover:border-emerald-500 transition-all duration-300 shadow-sm shrink-0">
+            <div className="w-9 h-9 rounded-full overflow-hidden border-2 border-red-500/40 group-hover:border-red-500 transition-all duration-300 shadow-sm shrink-0">
               <img
                 src={PORTFOLIO_DATA.personal.profileImage}
                 alt={PORTFOLIO_DATA.personal.name}
@@ -57,7 +57,7 @@ export const Navbar: React.FC = () => {
               />
             </div>
             <div className="flex flex-col">
-              <span className="leading-tight font-mono text-sm tracking-normal text-emerald-600 dark:text-emerald-400">
+              <span className="leading-tight font-mono text-sm tracking-normal text-red-600 dark:text-red-400">
                 ~/ahmed-marei
               </span>
               <span className="text-xs text-slate-500 dark:text-slate-400 font-normal">
@@ -72,7 +72,7 @@ export const Navbar: React.FC = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="px-3 py-1.5 text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-colors"
+                className="px-3 py-1.5 text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-red-600 dark:hover:text-red-400 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-colors"
               >
                 {link.name}
               </a>
@@ -108,7 +108,7 @@ export const Navbar: React.FC = () => {
               href={PORTFOLIO_DATA.personal.linkedinUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 text-xs font-semibold rounded-lg bg-slate-900 text-white dark:bg-emerald-500 dark:text-slate-950 hover:bg-slate-800 dark:hover:bg-emerald-400 shadow-sm transition-all"
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 text-xs font-semibold rounded-lg bg-slate-900 text-white dark:bg-red-600 dark:text-white hover:bg-slate-800 dark:hover:bg-red-500 shadow-sm transition-all"
             >
               <span>LinkedIn</span>
               <ExternalLink className="w-3.5 h-3.5" />
@@ -147,7 +147,7 @@ export const Navbar: React.FC = () => {
               key={link.name}
               href={link.href}
               onClick={() => setMobileMenuOpen(false)}
-              className="block px-3 py-2 rounded-md text-base font-medium text-slate-800 dark:text-slate-200 hover:bg-emerald-50 dark:hover:bg-emerald-950/40 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
+              className="block px-3 py-2 rounded-md text-base font-medium text-slate-800 dark:text-slate-200 hover:bg-red-50 dark:hover:bg-red-950/40 hover:text-red-600 dark:hover:text-red-400 transition-colors"
             >
               {link.name}
             </a>
@@ -167,7 +167,7 @@ export const Navbar: React.FC = () => {
               href={PORTFOLIO_DATA.personal.linkedinUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg bg-emerald-600 text-white font-medium text-sm shadow"
+              className="flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg bg-red-600 hover:bg-red-500 text-white font-medium text-sm shadow"
             >
               <ShieldCheck className="w-4 h-4" />
               <span>Connect on LinkedIn</span>

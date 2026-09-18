@@ -51,7 +51,7 @@ export const Contact: React.FC = () => {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono bg-red-500/10 text-red-600 dark:text-red-400 border border-red-500/20">
             <Mail className="w-3.5 h-3.5" />
             <span>Connect Directly</span>
           </div>
@@ -76,7 +76,7 @@ export const Contact: React.FC = () => {
                 {/* LinkedIn Contact Block */}
                 <div className="p-4 rounded-xl bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 space-y-2">
                   <div className="flex items-center justify-between">
-                    <span className="text-xs font-mono text-emerald-600 dark:text-emerald-400 font-semibold flex items-center gap-1.5">
+                    <span className="text-xs font-mono text-red-600 dark:text-red-400 font-semibold flex items-center gap-1.5">
                       <Linkedin className="w-4 h-4 text-blue-500" />
                       Primary Professional Profile
                     </span>
@@ -85,7 +85,7 @@ export const Contact: React.FC = () => {
                       className="text-xs text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 flex items-center gap-1"
                       title="Copy LinkedIn URL"
                     >
-                      {copied ? <Check className="w-3.5 h-3.5 text-emerald-500" /> : <Copy className="w-3.5 h-3.5" />}
+                      {copied ? <Check className="w-3.5 h-3.5 text-red-500" /> : <Copy className="w-3.5 h-3.5" />}
                       <span>{copied ? 'Copied' : 'Copy'}</span>
                     </button>
                   </div>
@@ -96,7 +96,7 @@ export const Contact: React.FC = () => {
                     href={personal.linkedinUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-xs font-medium text-emerald-600 dark:text-emerald-400 hover:underline pt-1"
+                    className="inline-flex items-center gap-1.5 text-xs font-medium text-red-600 dark:text-red-400 hover:underline pt-1"
                   >
                     <span>Open in LinkedIn</span>
                     <ExternalLink className="w-3 h-3" />
@@ -106,7 +106,7 @@ export const Contact: React.FC = () => {
                 {/* GitHub Contact Block */}
                 <div className="p-4 rounded-xl bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 space-y-2">
                   <div className="flex items-center justify-between">
-                    <span className="text-xs font-mono text-emerald-600 dark:text-emerald-400 font-semibold flex items-center gap-1.5">
+                    <span className="text-xs font-mono text-red-600 dark:text-red-400 font-semibold flex items-center gap-1.5">
                       <Github className="w-4 h-4 text-slate-800 dark:text-slate-200" />
                       GitHub Profile & Code Repositories
                     </span>
@@ -115,7 +115,7 @@ export const Contact: React.FC = () => {
                       className="text-xs text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 flex items-center gap-1"
                       title="Copy GitHub URL"
                     >
-                      {copiedGithub ? <Check className="w-3.5 h-3.5 text-emerald-500" /> : <Copy className="w-3.5 h-3.5" />}
+                      {copiedGithub ? <Check className="w-3.5 h-3.5 text-red-500" /> : <Copy className="w-3.5 h-3.5" />}
                       <span>{copiedGithub ? 'Copied' : 'Copy'}</span>
                     </button>
                   </div>
@@ -126,7 +126,7 @@ export const Contact: React.FC = () => {
                     href={personal.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-xs font-medium text-emerald-600 dark:text-emerald-400 hover:underline pt-1"
+                    className="inline-flex items-center gap-1.5 text-xs font-medium text-red-600 dark:text-red-400 hover:underline pt-1"
                   >
                     <span>Visit GitHub Profile</span>
                     <ExternalLink className="w-3 h-3" />
@@ -135,7 +135,7 @@ export const Contact: React.FC = () => {
 
                 {/* Location Block */}
                 <div className="p-4 rounded-xl bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-500 shrink-0">
+                  <div className="w-9 h-9 rounded-lg bg-red-500/10 flex items-center justify-center text-red-500 shrink-0">
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div>
@@ -148,7 +148,7 @@ export const Contact: React.FC = () => {
               {/* Data Transparency Card */}
               <div className="p-4 rounded-xl bg-slate-50 dark:bg-slate-900/40 border border-slate-200/80 dark:border-slate-800 text-xs text-slate-500 dark:text-slate-400 space-y-1.5">
                 <div className="flex items-center gap-1.5 text-slate-700 dark:text-slate-300 font-semibold">
-                  <Info className="w-4 h-4 text-emerald-500" />
+                  <Info className="w-4 h-4 text-red-500" />
                   <span>Verified Public Records</span>
                 </div>
                 <p>
@@ -167,8 +167,8 @@ export const Contact: React.FC = () => {
               </h3>
 
               {formSubmitted ? (
-                <div className="p-6 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-center space-y-3">
-                  <CheckCircle2 className="w-10 h-10 text-emerald-500 mx-auto" />
+                <div className="p-6 rounded-xl bg-red-500/10 border border-red-500/30 text-center space-y-3">
+                  <CheckCircle2 className="w-10 h-10 text-red-500 mx-auto" />
                   <h4 className="text-lg font-bold text-slate-900 dark:text-white">Message Sent Successfully!</h4>
                   <p className="text-xs text-slate-600 dark:text-slate-300 max-w-sm mx-auto">
                     Thank you for reaching out to Ahmed Marei. For immediate inquiries, you can also send a direct InMail message on LinkedIn.
@@ -178,7 +178,7 @@ export const Contact: React.FC = () => {
                       setFormSubmitted(false);
                       setFormData({ name: '', email: '', subject: '', message: '' });
                     }}
-                    className="mt-2 text-xs font-mono text-emerald-600 dark:text-emerald-400 underline hover:no-underline"
+                    className="mt-2 text-xs font-mono text-red-600 dark:text-red-400 underline hover:no-underline"
                   >
                     Send another message
                   </button>
@@ -196,7 +196,7 @@ export const Contact: React.FC = () => {
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder="John Doe"
-                        className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                        className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-red-500"
                       />
                     </div>
 
@@ -210,7 +210,7 @@ export const Contact: React.FC = () => {
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         placeholder="john@example.com"
-                        className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                        className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-red-500"
                       />
                     </div>
                   </div>
@@ -224,7 +224,7 @@ export const Contact: React.FC = () => {
                       value={formData.subject}
                       onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                       placeholder="Opportunity / Collaboration / Inquiry"
-                      className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                      className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-red-500"
                     />
                   </div>
 
@@ -238,13 +238,13 @@ export const Contact: React.FC = () => {
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       placeholder="Hello Ahmed, I saw your portfolio and would like to discuss..."
-                      className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-emerald-500 resize-none"
+                      className="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-red-500 resize-none"
                     ></textarea>
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full py-3 px-6 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-medium text-sm shadow-md transition-all flex items-center justify-center gap-2 transform active:scale-98"
+                    className="w-full py-3 px-6 rounded-xl bg-red-600 hover:bg-red-500 text-white font-medium text-sm shadow-md shadow-red-500/25 transition-all flex items-center justify-center gap-2 transform active:scale-98"
                   >
                     <Send className="w-4 h-4" />
                     <span>Deliver Message</span>

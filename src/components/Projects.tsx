@@ -65,7 +65,7 @@ export const Projects: React.FC = () => {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono bg-red-500/10 text-red-600 dark:text-red-400 border border-red-500/20">
             <FileCode className="w-3.5 h-3.5" />
             <span>Featured Engineering Work</span>
           </div>
@@ -82,8 +82,8 @@ export const Projects: React.FC = () => {
           
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b border-slate-100 dark:border-slate-800/80 pb-6">
             <div>
-              <div className="flex items-center gap-2 text-xs font-mono text-emerald-600 dark:text-emerald-400 mb-2">
-                <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30">
+              <div className="flex items-center gap-2 text-xs font-mono text-red-600 dark:text-red-400 mb-2">
+                <span className="px-2.5 py-0.5 rounded-full bg-red-500/10 border border-red-500/30">
                   {phpProject.category}
                 </span>
                 <span>•</span>
@@ -96,7 +96,7 @@ export const Projects: React.FC = () => {
 
             <div className="flex items-center gap-3">
               <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-mono text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
-                <Database className="w-3.5 h-3.5 text-emerald-500" />
+                <Database className="w-3.5 h-3.5 text-red-500" />
                 PHP & MySQL Certified (95%)
               </span>
             </div>
@@ -117,7 +117,7 @@ export const Projects: React.FC = () => {
                 <div className="space-y-2.5">
                   {phpProject.details.map((detail, idx) => (
                     <div key={idx} className="flex items-start gap-3 p-3 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-100 dark:border-slate-800">
-                      <div className="w-6 h-6 rounded-lg bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-mono text-xs font-bold shrink-0 mt-0.5">
+                      <div className="w-6 h-6 rounded-lg bg-red-500/10 text-red-600 dark:text-red-400 flex items-center justify-center font-mono text-xs font-bold shrink-0 mt-0.5">
                         {idx + 1}
                       </div>
                       <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
@@ -137,7 +137,7 @@ export const Projects: React.FC = () => {
                   {phpProject.technologies.map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 rounded-lg text-xs font-mono bg-emerald-500/5 text-emerald-700 dark:text-emerald-300 border border-emerald-500/20"
+                      className="px-3 py-1 rounded-lg text-xs font-mono bg-red-500/5 text-red-700 dark:text-red-300 border border-red-500/20"
                     >
                       {tech}
                     </span>
@@ -150,7 +150,7 @@ export const Projects: React.FC = () => {
             <div className="lg:col-span-5 bg-slate-50 dark:bg-slate-900/90 rounded-2xl p-6 border border-slate-200 dark:border-slate-800 space-y-5">
               <div className="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-3">
                 <div className="flex items-center gap-2">
-                  <Terminal className="w-4 h-4 text-emerald-500" />
+                  <Terminal className="w-4 h-4 text-red-500" />
                   <h4 className="text-sm font-bold text-slate-900 dark:text-white">
                     Live PHP/REST & MySQL Simulator
                   </h4>
@@ -192,7 +192,7 @@ export const Projects: React.FC = () => {
                         onClick={() => setUserRoleFilter(role)}
                         className={`py-1.5 px-2 rounded-lg text-xs font-mono border transition-all ${
                           userRoleFilter === role
-                            ? 'bg-emerald-500/20 border-emerald-500 text-emerald-700 dark:text-emerald-300 font-bold'
+                            ? 'bg-red-500/20 border-red-500 text-red-700 dark:text-red-300 font-bold'
                             : 'bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400'
                         }`}
                       >
@@ -207,7 +207,7 @@ export const Projects: React.FC = () => {
               <button
                 onClick={runQuery}
                 disabled={isQuerying}
-                className="w-full py-2.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold font-mono tracking-wide flex items-center justify-center gap-2 shadow-md transition-all disabled:opacity-50"
+                className="w-full py-2.5 px-4 rounded-xl bg-red-600 hover:bg-red-500 text-white text-xs font-bold font-mono tracking-wide flex items-center justify-center gap-2 shadow-md shadow-red-500/25 transition-all disabled:opacity-50"
               >
                 {isQuerying ? (
                   <>
@@ -226,7 +226,7 @@ export const Projects: React.FC = () => {
               {queryOutput && (
                 <div className="p-3.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 font-mono text-[11px] space-y-2 animate-in fade-in duration-200">
                   <div className="flex items-center justify-between text-slate-400 text-[10px] pb-1 border-b border-slate-800">
-                    <span className="text-emerald-400 font-bold">HTTP {queryOutput.status} OK</span>
+                    <span className="text-red-400 font-bold">HTTP {queryOutput.status} OK</span>
                     <span>Lat: {queryOutput.responseTime}</span>
                   </div>
                   <div>
@@ -234,8 +234,8 @@ export const Projects: React.FC = () => {
                     <p className="text-slate-300 text-[10px] mt-0.5 break-all">{queryOutput.sqlQuery}</p>
                   </div>
                   <div>
-                    <span className="text-cyan-400">JSON Payload:</span>
-                    <pre className="text-[10px] text-emerald-300 mt-1 max-h-32 overflow-y-auto">
+                    <span className="text-rose-400">JSON Payload:</span>
+                    <pre className="text-[10px] text-red-300 mt-1 max-h-32 overflow-y-auto">
                       {JSON.stringify(queryOutput.jsonResult, null, 2)}
                     </pre>
                   </div>
@@ -252,14 +252,14 @@ export const Projects: React.FC = () => {
         <div className="bg-white dark:bg-[#0c1222] border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-10 shadow-lg space-y-6">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 dark:border-slate-800 pb-4">
             <div>
-              <span className="text-xs font-mono text-cyan-600 dark:text-cyan-400">
+              <span className="text-xs font-mono text-rose-600 dark:text-rose-400">
                 {cloudProject.category} • {cloudProject.context}
               </span>
               <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mt-1">
                 {cloudProject.title}
               </h3>
             </div>
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-mono bg-cyan-500/10 text-cyan-700 dark:text-cyan-300 border border-cyan-500/30 self-start sm:self-auto">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-mono bg-rose-500/10 text-rose-700 dark:text-rose-300 border border-rose-500/30 self-start sm:self-auto">
               <Server className="w-3.5 h-3.5" />
               Huawei HCIA Certified
             </span>
