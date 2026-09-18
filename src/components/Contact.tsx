@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { 
   Mail, 
   Send, 
@@ -8,7 +8,7 @@ import {
   ExternalLink, 
   Copy, 
   Check, 
-  Info,
+  Info, 
   Github 
 } from 'lucide-react';
 import { PORTFOLIO_DATA } from '../data/portfolioData';
@@ -25,17 +25,29 @@ export const Contact: React.FC = () => {
     message: ''
   });
 
+  const copyTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const copyGithubTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (copyTimeoutRef.current) clearTimeout(copyTimeoutRef.current);
+      if (copyGithubTimeoutRef.current) clearTimeout(copyGithubTimeoutRef.current);
+    };
+  }, []);
+
   const handleCopyLink = () => {
     navigator.clipboard.writeText(personal.linkedinUrl);
     setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    if (copyTimeoutRef.current) clearTimeout(copyTimeoutRef.current);
+    copyTimeoutRef.current = setTimeout(() => setCopied(false), 2000);
   };
 
   const handleCopyGithub = () => {
     if (personal.githubUrl) {
       navigator.clipboard.writeText(personal.githubUrl);
       setCopiedGithub(true);
-      setTimeout(() => setCopiedGithub(false), 2000);
+      if (copyGithubTimeoutRef.current) clearTimeout(copyGithubTimeoutRef.current);
+      copyGithubTimeoutRef.current = setTimeout(() => setCopiedGithub(false), 2000);
     }
   };
 

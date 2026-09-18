@@ -56,6 +56,10 @@ export const Certifications: React.FC = () => {
                     <img 
                       src={cert.certificateImage} 
                       alt={cert.name}
+                      width={400}
+                      height={176}
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-cover object-top filter brightness-95 group-hover:scale-105 transition-transform duration-300"
                     />
                     <div className="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 flex items-center justify-center gap-2 text-white font-medium text-xs backdrop-blur-xs transition-opacity">
@@ -219,6 +223,8 @@ export const Certifications: React.FC = () => {
               <img 
                 src={selectedCert.certificateImage} 
                 alt={selectedCert.name}
+                loading="lazy"
+                decoding="async"
                 className="max-h-full max-w-full object-contain rounded-lg shadow-md" 
               />
             </div>

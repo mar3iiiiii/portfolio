@@ -1,6 +1,6 @@
-import profileImage from '../assets/ahmed_profile.jpg';
-import ntiCertImage from '../assets/certificates/nti_itida_fullstack_php.png';
-import huaweiCertImage from '../assets/certificates/huawei_cloud_computing.png';
+import profileImage from '../assets/ahmed_profile.webp';
+import ntiCertImage from '../assets/certificates/nti_itida_fullstack_php.webp';
+import huaweiCertImage from '../assets/certificates/huawei_cloud_computing.webp';
 
 export interface Project {
   id: string;

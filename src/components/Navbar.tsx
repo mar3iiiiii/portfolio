@@ -18,27 +18,44 @@ export const Navbar: React.FC = () => {
   const [activeSection, setActiveSection] = useState<string>('');
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-
-      const sections = ['about', 'skills', 'experience', 'projects', 'certifications', 'education', 'contact'];
-      const scrollPosition = window.scrollY + 220;
-
-      for (const sectionId of sections) {
-        const el = document.getElementById(sectionId);
-        if (el) {
-          const top = el.offsetTop;
-          const height = el.offsetHeight;
-          if (scrollPosition >= top && scrollPosition < top + height) {
-            setActiveSection(sectionId);
-            break;
-          }
-        }
+    let ticking = false;
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 20);
+          ticking = false;
+        });
+        ticking = true;
       }
     };
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    const sectionIds = ['about', 'skills', 'experience', 'projects', 'certifications', 'education', 'contact'];
+    const sectionElements = sectionIds
+      .map(id => document.getElementById(id))
+      .filter((el): el is HTMLElement => el !== null);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      {
+        rootMargin: '-25% 0px -65% 0px',
+        threshold: 0
+      }
+    );
+
+    sectionElements.forEach(el => observer.observe(el));
+
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      observer.disconnect();
+    };
   }, []);
 
   const navLinks = [
@@ -70,6 +87,10 @@ export const Navbar: React.FC = () => {
               <img
                 src={PORTFOLIO_DATA.personal.profileImage}
                 alt={PORTFOLIO_DATA.personal.name}
+                width={36}
+                height={36}
+                loading="eager"
+                decoding="async"
                 className="w-full h-full object-cover"
               />
             </div>

@@ -96,6 +96,11 @@ export const Hero: React.FC = () => {
                   <img
                     src={personal.profileImage}
                     alt={personal.name}
+                    width={384}
+                    height={384}
+                    loading="eager"
+                    decoding="async"
+                    fetchPriority="high"
                     className="w-full h-full object-cover object-[center_12%] scale-105 group-hover:scale-110 transition-transform duration-700 ease-out"
                   />
                 </div>

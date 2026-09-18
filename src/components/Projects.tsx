@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { 
   FileCode, 
   Terminal, 
@@ -25,6 +25,14 @@ export const Projects: React.FC = () => {
     jsonResult: any;
   } | null>(null);
 
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (timerRef.current) clearTimeout(timerRef.current);
+    };
+  }, []);
+
   const sampleUsers = [
     { id: 1, name: 'Ahmed Marei', role: 'Developer', email: 'ahmed@example.com', status: 'Active' },
     { id: 2, name: 'Eng. Team Lead', role: 'Administrator', email: 'lead@example.com', status: 'Active' },
@@ -33,7 +41,8 @@ export const Projects: React.FC = () => {
 
   const runQuery = () => {
     setIsQuerying(true);
-    setTimeout(() => {
+    if (timerRef.current) clearTimeout(timerRef.current);
+    timerRef.current = setTimeout(() => {
       let filtered = sampleUsers;
       if (userRoleFilter !== 'all') {
         filtered = sampleUsers.filter(u => u.role.toLowerCase() === userRoleFilter.toLowerCase());
@@ -50,13 +59,15 @@ export const Projects: React.FC = () => {
         }
       });
       setIsQuerying(false);
-    }, 400);
+    }, 350);
   };
 
   const resetPlayground = () => {
+    if (timerRef.current) clearTimeout(timerRef.current);
     setSelectedEndpoint('GET /api/users');
     setUserRoleFilter('all');
     setQueryOutput(null);
+    setIsQuerying(false);
   };
 
   return (
