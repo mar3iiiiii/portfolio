@@ -1,3 +1,7 @@
+import profileImage from '../assets/ahmed_profile.jpg';
+import ntiCertImage from '../assets/certificates/nti_itida_fullstack_php.png';
+import huaweiCertImage from '../assets/certificates/huawei_cloud_computing.png';
+
 export interface Project {
   id: string;
   title: string;
@@ -55,7 +59,7 @@ export const PORTFOLIO_DATA = {
     location: "Cairo / El Shorouk, Egypt",
     linkedinUrl: "https://www.linkedin.com/in/ahmed-marei-m",
     githubUrl: "https://github.com/mar3iiiiii",
-    profileImage: "/ahmed_profile.jpg",
+    profileImage: profileImage,
     statusBadge: "Open to Practical Training & Internships",
     aboutSummary: `I am a Computer and Control Engineering student at El Shorouk Academy (Class of 2027) focused on developing robust full-stack web applications and scalable cloud computing architectures.
 
@@ -235,7 +239,7 @@ I also graduated from Round 5 of the Digital Egypt Pioneers Initiative (DEPI - u
       hours: "120 Total Hours (90 Technical + 30 Freelancing)",
       code: "Student ID: 325230",
       details: "Official Summer Training Certificate in Full Stack Web Development using PHP (02 to 27 August 2026). Jointly awarded with ITIDA and signed by Eng. Ahmed El Zaher (ITIDA CEO) and Prof. Ahmed Khattab (NTI Director).",
-      certificateImage: "/certificates/nti_itida_fullstack_php.png",
+      certificateImage: ntiCertImage,
       tags: ["PHP", "MySQL", "Full Stack", "ITIDA", "NTI", "95% Score", "Freelancing"]
     },
     {
@@ -246,7 +250,7 @@ I also graduated from Round 5 of the Digital Egypt Pioneers Initiative (DEPI - u
       score: "Certificate of Completion",
       code: "Code: 20260917000498",
       details: "Official Certificate of Completion for successfully finishing the study and examination of HCIA-Cloud Computing V5.5 Course, verifying expertise in enterprise virtualization, storage pools, and cloud operations.",
-      certificateImage: "/certificates/huawei_cloud_computing.png",
+      certificateImage: huaweiCertImage,
       tags: ["Huawei", "HCIA", "Cloud Computing", "Virtualization", "Infrastructure"]
     },
     {
