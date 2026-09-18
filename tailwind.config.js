@@ -34,14 +34,35 @@ export default {
         mono: ['JetBrains Mono', 'monospace'],
       },
       animation: {
-        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'pulse-slow': 'pulse 5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         'float': 'float 6s ease-in-out infinite',
+        'float-slow': 'float 9s ease-in-out infinite',
+        'spin-slow': 'spin 24s linear infinite',
+        'spin-reverse-slow': 'spin-reverse 28s linear infinite',
+        'blob-1': 'blob 22s ease-in-out infinite',
+        'blob-2': 'blob 26s ease-in-out 4s infinite',
+        'blob-3': 'blob 30s ease-in-out 8s infinite',
       },
       keyframes: {
         float: {
           '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-10px)' },
-        }
+          '50%': { transform: 'translateY(-12px)' },
+        },
+        'spin-reverse': {
+          'from': { transform: 'rotate(360deg)' },
+          'to': { transform: 'rotate(0deg)' },
+        },
+        blob: {
+          '0%, 100%': {
+            transform: 'translate(0px, 0px) scale(1)',
+          },
+          '33%': {
+            transform: 'translate(30px, -50px) scale(1.1)',
+          },
+          '66%': {
+            transform: 'translate(-20px, 20px) scale(0.95)',
+          },
+        },
       }
     },
   },

@@ -84,16 +84,30 @@ export const Hero: React.FC = () => {
 
           <div className="lg:col-span-5 flex justify-center items-center">
             <div className="relative group">
-              {/* Elegant ambient glow behind photo */}
-              <div className="absolute -inset-4 bg-gradient-to-tr from-red-600/30 via-rose-500/20 to-amber-500/20 rounded-3xl blur-2xl opacity-60 group-hover:opacity-85 transition duration-700"></div>
+              {/* Outer soft ambient glowing aura */}
+              <div className="absolute -inset-6 rounded-full bg-gradient-to-tr from-red-600/35 via-rose-500/25 to-amber-500/20 blur-3xl opacity-70 group-hover:opacity-95 transition-opacity duration-1000 animate-pulse-slow"></div>
 
-              {/* Clean, large portrait photo without border card */}
-              <div className="relative w-72 sm:w-80 md:w-96 aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl">
-                <img
-                  src={personal.profileImage}
-                  alt={personal.name}
-                  className="w-full h-full object-cover object-top transition duration-500 group-hover:scale-105"
-                />
+              {/* Animated rotating border / halo ring */}
+              <div className="absolute -inset-1.5 rounded-full bg-gradient-to-r from-red-600 via-rose-500 to-amber-500 opacity-75 blur-[2px] animate-spin-slow group-hover:opacity-100 transition duration-500"></div>
+
+              {/* High-quality Circular Portrait Container */}
+              <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-88 md:h-88 lg:w-96 lg:h-96 rounded-full overflow-hidden p-1.5 bg-slate-900/90 dark:bg-black shadow-2xl border border-red-500/40">
+                <div className="w-full h-full rounded-full overflow-hidden bg-black flex items-center justify-center">
+                  <img
+                    src={personal.profileImage}
+                    alt={personal.name}
+                    className="w-full h-full object-cover object-[center_12%] scale-105 group-hover:scale-110 transition-transform duration-700 ease-out"
+                  />
+                </div>
+              </div>
+
+              {/* Floating interactive status pill badge */}
+              <div className="absolute -bottom-2 right-4 sm:bottom-2 sm:right-6 bg-slate-950/90 dark:bg-black/90 backdrop-blur-md border border-red-500/40 rounded-full py-1.5 px-3.5 shadow-xl flex items-center gap-2">
+                <span className="relative flex h-2.5 w-2.5">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                </span>
+                <span className="text-xs font-mono text-slate-200">Open to Opportunities</span>
               </div>
             </div>
           </div>
