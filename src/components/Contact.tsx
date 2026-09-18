@@ -8,13 +8,15 @@ import {
   ExternalLink, 
   Copy, 
   Check, 
-  Info 
+  Info,
+  Github 
 } from 'lucide-react';
 import { PORTFOLIO_DATA } from '../data/portfolioData';
 
 export const Contact: React.FC = () => {
   const { personal } = PORTFOLIO_DATA;
   const [copied, setCopied] = useState(false);
+  const [copiedGithub, setCopiedGithub] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -27,6 +29,14 @@ export const Contact: React.FC = () => {
     navigator.clipboard.writeText(personal.linkedinUrl);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
+  };
+
+  const handleCopyGithub = () => {
+    if (personal.githubUrl) {
+      navigator.clipboard.writeText(personal.githubUrl);
+      setCopiedGithub(true);
+      setTimeout(() => setCopiedGithub(false), 2000);
+    }
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -89,6 +99,36 @@ export const Contact: React.FC = () => {
                     className="inline-flex items-center gap-1.5 text-xs font-medium text-emerald-600 dark:text-emerald-400 hover:underline pt-1"
                   >
                     <span>Open in LinkedIn</span>
+                    <ExternalLink className="w-3 h-3" />
+                  </a>
+                </div>
+
+                {/* GitHub Contact Block */}
+                <div className="p-4 rounded-xl bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 space-y-2">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-mono text-emerald-600 dark:text-emerald-400 font-semibold flex items-center gap-1.5">
+                      <Github className="w-4 h-4 text-slate-800 dark:text-slate-200" />
+                      GitHub Profile & Code Repositories
+                    </span>
+                    <button
+                      onClick={handleCopyGithub}
+                      className="text-xs text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 flex items-center gap-1"
+                      title="Copy GitHub URL"
+                    >
+                      {copiedGithub ? <Check className="w-3.5 h-3.5 text-emerald-500" /> : <Copy className="w-3.5 h-3.5" />}
+                      <span>{copiedGithub ? 'Copied' : 'Copy'}</span>
+                    </button>
+                  </div>
+                  <div className="text-sm font-semibold text-slate-800 dark:text-slate-200 truncate font-mono">
+                    github.com/mar3iiiiii
+                  </div>
+                  <a
+                    href={personal.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-xs font-medium text-emerald-600 dark:text-emerald-400 hover:underline pt-1"
+                  >
+                    <span>Visit GitHub Profile</span>
                     <ExternalLink className="w-3 h-3" />
                   </a>
                 </div>

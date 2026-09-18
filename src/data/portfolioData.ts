@@ -54,6 +54,7 @@ export const PORTFOLIO_DATA = {
     headline: "Computer and Control Engineering student at El Shorouk Academy (Class of 2027) with certified expertise in Full Stack Web Development (NTI & ITIDA 95%) and Cloud Computing (Huawei HCIA).",
     location: "Cairo / El Shorouk, Egypt",
     linkedinUrl: "https://www.linkedin.com/in/ahmed-marei-m",
+    githubUrl: "https://github.com/mar3iiiiii",
     profileImage: "/ahmed_profile.jpg",
     statusBadge: "Open to Practical Training & Internships",
     aboutSummary: `I am a Computer and Control Engineering student at El Shorouk Academy (Class of 2027) focused on developing robust full-stack web applications and scalable cloud computing architectures.
@@ -68,7 +69,6 @@ I also graduated from Round 5 of the Digital Egypt Pioneers Initiative (DEPI - u
       { label: "Initiative Trainee", value: "DEPI Round 5", subtext: "Rowad Misr El Raqmeya" }
     ],
     unavailableFields: {
-      github: "Not publicly linked on LinkedIn (customizable placeholder provided)",
       directEmail: "Kept private on LinkedIn (contact form enabled)",
       directPhone: "Kept private on LinkedIn for privacy"
     }

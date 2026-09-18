@@ -6,7 +6,8 @@ import {
   Layers, 
   Database, 
   Cloud, 
-  ExternalLink 
+  ExternalLink,
+  Github 
 } from 'lucide-react';
 import { PORTFOLIO_DATA } from '../data/portfolioData';
 
@@ -75,6 +76,17 @@ export const Hero: React.FC = () => {
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800/90 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700 font-medium text-sm transition-all"
               >
                 <span>Projects</span>
+              </a>
+
+              <a
+                href={personal.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-4 py-3 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800/90 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700 text-sm font-medium transition-all"
+              >
+                <Github className="w-4 h-4" />
+                <span>GitHub</span>
+                <ExternalLink className="w-3.5 h-3.5" />
               </a>
 
               <a

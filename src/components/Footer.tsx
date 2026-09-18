@@ -33,6 +33,10 @@ export const Footer: React.FC = () => {
             <a href="#skills" className="hover:text-emerald-500 transition-colors">Skills</a>
             <a href="#projects" className="hover:text-emerald-500 transition-colors">Projects</a>
             <a href="#certifications" className="hover:text-emerald-500 transition-colors">Certifications</a>
+            <a href={personal.githubUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-emerald-500 transition-colors">
+              <span>GitHub</span>
+              <ExternalLink className="w-3 h-3" />
+            </a>
             <a href={personal.linkedinUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-emerald-500 transition-colors">
               <span>LinkedIn</span>
               <ExternalLink className="w-3 h-3" />

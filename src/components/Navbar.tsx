@@ -6,7 +6,8 @@ import {
   Menu, 
   X, 
   ExternalLink,
-  ShieldCheck
+  ShieldCheck,
+  Github
 } from 'lucide-react';
 import { PORTFOLIO_DATA } from '../data/portfolioData';
 
@@ -93,6 +94,17 @@ export const Navbar: React.FC = () => {
             </button>
 
             <a
+              href={PORTFOLIO_DATA.personal.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+              aria-label="GitHub Profile"
+              title="GitHub Profile"
+            >
+              <Github className="w-4 h-4" />
+            </a>
+
+            <a
               href={PORTFOLIO_DATA.personal.linkedinUrl}
               target="_blank"
               rel="noopener noreferrer"
@@ -141,6 +153,16 @@ export const Navbar: React.FC = () => {
             </a>
           ))}
           <div className="pt-4 border-t border-slate-200 dark:border-slate-800 flex flex-col gap-2">
+            <a
+              href={PORTFOLIO_DATA.personal.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white font-medium text-sm border border-slate-200 dark:border-slate-700"
+            >
+              <Github className="w-4 h-4" />
+              <span>GitHub Profile</span>
+              <ExternalLink className="w-3.5 h-3.5" />
+            </a>
             <a
               href={PORTFOLIO_DATA.personal.linkedinUrl}
               target="_blank"
