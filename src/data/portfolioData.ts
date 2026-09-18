@@ -35,11 +35,14 @@ export interface CertificationItem {
   id: string;
   name: string;
   issuer: string;
+  track?: string;
   issueDate?: string;
   code?: string;
   score?: string;
   hours?: string;
   details: string;
+  courses?: string[];
+  capabilities?: string[];
   certificateImage?: string;
   tags: string[];
 }
@@ -54,23 +57,23 @@ export const PORTFOLIO_DATA = {
   personal: {
     name: "Ahmed Marei",
     title: "Computer & Control Engineering Student",
-    subTitle: "Full Stack Web Developer (PHP/MySQL) & Certified Cloud Associate (Huawei HCIA)",
-    headline: "Computer and Control Engineering student at El Shorouk Academy (Class of 2027) with certified expertise in Full Stack Web Development (NTI & ITIDA 95%) and Cloud Computing (Huawei HCIA).",
+    subTitle: "Full Stack Web Developer (PHP/MySQL) • Cloud Associate (Huawei HCIA) • Vulnerability Analyst & Penetration Tester (DEPI)",
+    headline: "Computer and Control Engineering student at El Shorouk Academy (Class of 2027) with verified expertise in Full Stack Web Development (NTI & ITIDA 95%), Cloud Computing (Huawei HCIA), and Infrastructure & Security (DEPI Vulnerability Analyst & Penetration Tester).",
     location: "Cairo / El Shorouk, Egypt",
     linkedinUrl: "https://www.linkedin.com/in/ahmed-marei-m",
     githubUrl: "https://github.com/mar3iiiiii",
     profileImage: profileImage,
     statusBadge: "Open to Practical Training & Internships",
-    aboutSummary: `I am a Computer and Control Engineering student at El Shorouk Academy (Class of 2027) focused on developing robust full-stack web applications and scalable cloud computing architectures.
+    aboutSummary: `I am a Computer and Control Engineering student at El Shorouk Academy (Class of 2027) focused on building secure full-stack web applications, scalable cloud computing architectures, and conducting infrastructure security assessments.
 
 I hold an official Summer Training Certificate in Full Stack Web Development using PHP from the National Telecommunication Institute (NTI) & ITIDA, completing 120 hours (90 technical + 30 freelancing) with an outstanding 95% final score. Additionally, I am certified in HCIA-Cloud Computing V5.5 by Huawei ICT Academy, mastering computing virtualization, distributed storage, and cloud infrastructure operations.
 
-I also graduated from Round 5 of the Digital Egypt Pioneers Initiative (DEPI - under MCIT Egypt), refining professional career readiness, technical storytelling, and global freelancing strategy.`,
+Furthermore, I am a graduate of Round 5 of the Digital Egypt Pioneers Initiative (DEPI - under MCIT Egypt) in the Infrastructure & Security track as a Vulnerability Analyst and Penetration Tester — specializing in Network, Web Application, and Android Penetration Testing, security testing under the Mastercard framework, Prompt Engineering, and professional career readiness under instructor Rawan Waheed.`,
     keyHighlights: [
       { label: "Academic Standing", value: "Class of 2027", subtext: "El Shorouk Academy" },
       { label: "Full Stack (NTI/ITIDA)", value: "95% Final Score", subtext: "120 Hrs (90 Tech + 30 Freelance)" },
       { label: "Huawei ICT Academy", value: "HCIA-Cloud V5.5", subtext: "Code: 20260917000498" },
-      { label: "Initiative Trainee", value: "DEPI Round 5", subtext: "Rowad Misr El Raqmeya" }
+      { label: "DEPI Track", value: "Vulnerability Analyst", subtext: "InfraStructure & Security Track" }
     ],
     unavailableFields: {
       directEmail: "Kept private on LinkedIn (contact form enabled)",
@@ -129,20 +132,21 @@ I also graduated from Round 5 of the Digital Egypt Pioneers Initiative (DEPI - u
     },
     {
       id: "depi-mcit",
-      organization: "Digital Egypt Pioneers Initiative (DEPI)",
-      role: "Trainee — Soft Skills & Professional Development (Round 5)",
+      organization: "Digital Egypt Pioneers Initiative (DEPI) — MCIT Egypt",
+      role: "Vulnerability Analyst & Penetration Tester Trainee (DEPI Round 5)",
       location: "Cairo, Egypt",
       type: "National Initiative (Rowad Misr El Raqmeya - MCIT)",
       period: "Round 5 Graduate",
-      instructor: "Rawan Waheed",
-      description: "Selective nationwide initiative by Egypt's Ministry of Communications and Information Technology focused on professional readiness, personal branding, and global freelancing.",
+      instructor: "Rawan Waheed (Professional Readiness)",
+      description: "Selective nationwide initiative by Egypt's Ministry of Communications and Information Technology (MCIT) specializing in the Infrastructure & Security Track (Vulnerability Analyst & Penetration Tester) combined with rigorous professional career engineering.",
       achievements: [
-        "Personal Branding: Defining niche positioning, unique value communication, and intentional professional presence.",
-        "Presentation & Storytelling: Structuring and delivering technical presentations with clarity and audience engagement.",
-        "LinkedIn & Upwork Optimization: Transforming profiles into high-trust professional assets tailored for client acquisition.",
-        "ATS-Friendly CV Writing: Crafting metrics-driven, recruiter-ready resumes."
+        "Infrastructure & Security Track: Studied and performed Network, Web Application, and Android Penetration Testing following industry frameworks (Mastercard security testing standard).",
+        "Vulnerability Remediation & Reporting: Executed security audits, covering tracks, and delivering detailed vulnerability reports with actionable remediation advice for developers.",
+        "Applied AI & Modern Tools: Completed coursework in Prompt Engineering and modern testing toolchains.",
+        "Capstone Projects: Completed hands-on security capstones evaluating application and network segment vulnerabilities.",
+        "Professional Career Readiness: Certified in Personal Branding, Technical Storytelling, ATS CV Optimization, and Upwork Freelancing under instructor Rawan Waheed."
       ],
-      skills: ["Personal Branding", "Technical Presentations", "Upwork Freelancing", "ATS CV Writing", "Career Strategy"]
+      skills: ["Vulnerability Analysis", "Network Penetration Testing", "Web Application Security", "Android Pen-Testing", "Prompt Engineering", "Security Reporting", "Personal Branding", "Upwork Freelancing"]
     }
   ],
 
@@ -217,6 +221,18 @@ I also graduated from Round 5 of the Digital Egypt Pioneers Initiative (DEPI - u
       ]
     },
     {
+      category: "Infrastructure & Cybersecurity (DEPI Track)",
+      description: "DEPI Round 5 Track: Vulnerability Analyst and Penetration Tester (MCIT Egypt)",
+      skills: [
+        { name: "Network Penetration Testing", level: "DEPI Track", verifiedContext: "Mastercard Framework Segment Testing" },
+        { name: "Web Application Pen-Testing", level: "DEPI Track", verifiedContext: "OWASP & Application Vulnerabilities" },
+        { name: "Android Penetration Testing", level: "DEPI Track", verifiedContext: "Mobile Application Security Audit" },
+        { name: "Vulnerability Assessment", level: "DEPI Track", verifiedContext: "Mastercard Security Standards" },
+        { name: "Prompt Engineering", level: "DEPI Track", verifiedContext: "AI-Augmented Security & Tooling" },
+        { name: "Covering Tracks & Reporting", level: "DEPI Track", verifiedContext: "Security Documentation & Remediation" }
+      ]
+    },
+    {
       category: "Professional & Freelancing Skills",
       description: "Dedicated 30 hours of ITIDA freelancing training plus MCIT DEPI Round 5 graduation",
       skills: [
@@ -257,10 +273,27 @@ I also graduated from Round 5 of the Digital Egypt Pioneers Initiative (DEPI - u
       id: "cert-depi",
       name: "Digital Egypt Pioneers Initiative (DEPI) — Round 5",
       issuer: "Ministry of Communications and Information Technology (MCIT)",
+      track: "Infrastructure & Security — Vulnerability Analyst and Penetration Tester",
       issueDate: "Round 5 Graduate",
-      score: "Professional Readiness Graduate",
-      details: "Nationwide initiative by MCIT Egypt in Personal Branding, Professional Presentation, ATS CV Engineering, and Upwork Freelancing under instructor Rawan Waheed.",
-      tags: ["Personal Branding", "Presentation", "Career Readiness", "MCIT"]
+      score: "Technical & Readiness Graduate",
+      details: "Comprehensive national program under MCIT Egypt qualifying graduates as Vulnerability Analysts & Penetration Testers capable of executing network security tests within the framework set by Mastercard, testing diverse network segments, providing vulnerability remediation guidance to developers, and reporting penetration tests across global teams.",
+      capabilities: [
+        "Ensuring network security tests are conducted within the framework set by Mastercard.",
+        "Appropriate usage of security test cases & tools across various network segment types.",
+        "Providing guidance to developer teams on remediating identified application vulnerabilities.",
+        "Delivering structured penetration test reporting while coordinating with global teams."
+      ],
+      courses: [
+        "Prompt Engineering",
+        "Fundamentals of Networking & prerequisites",
+        "Network Penetration Testing",
+        "Web Application Penetration Testing",
+        "Android Penetration Testing",
+        "Capstone Project (Network & App Security)",
+        "Covering Tracks & Reporting",
+        "Capstone Project (Integrated Assessment)"
+      ],
+      tags: ["DEPI", "MCIT", "Vulnerability Analyst", "Penetration Testing", "Mastercard Framework", "Network Security", "Web Security", "Android Pen-Testing", "Prompt Engineering", "Personal Branding"]
     }
   ]
 };

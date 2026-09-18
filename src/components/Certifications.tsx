@@ -9,7 +9,10 @@ import {
   FileCheck, 
   ShieldCheck,
   Calendar,
-  Hash
+  Hash,
+  Shield,
+  ShieldAlert,
+  CheckCircle2
 } from 'lucide-react';
 import { PORTFOLIO_DATA, CertificationItem } from '../data/portfolioData';
 
@@ -71,6 +74,12 @@ export const Certifications: React.FC = () => {
                     <h3 className="text-lg font-bold text-slate-900 dark:text-white leading-snug mt-0.5">
                       {cert.name}
                     </h3>
+                    {cert.track && (
+                      <div className="mt-1.5 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-cyan-500/10 text-cyan-700 dark:text-cyan-300 font-mono text-xs font-semibold border border-cyan-500/20">
+                        <Shield className="w-3.5 h-3.5 text-cyan-500 shrink-0" />
+                        <span>Track: {cert.track}</span>
+                      </div>
+                    )}
                   </div>
 
                   {cert.score && (
@@ -106,6 +115,49 @@ export const Certifications: React.FC = () => {
                 <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
                   {cert.details}
                 </p>
+
+                {/* Core Capabilities */}
+                {cert.capabilities && cert.capabilities.length > 0 && (
+                  <div className="space-y-1.5 pt-1">
+                    <div className="text-[11px] font-bold font-mono text-slate-800 dark:text-slate-200 uppercase tracking-wider flex items-center gap-1.5">
+                      <ShieldAlert className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
+                      <span>Key Responsibilities & Competencies:</span>
+                    </div>
+                    <ul className="space-y-1">
+                      {cert.capabilities.map((cap, i) => (
+                        <li key={i} className="flex items-start gap-1.5 text-xs text-slate-600 dark:text-slate-300">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0 mt-0.5" />
+                          <span>{cap}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {/* Courses & Modules Box */}
+                {cert.courses && cert.courses.length > 0 && (
+                  <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/80 dark:bg-slate-900/60 overflow-hidden mt-3">
+                    <div className="px-3.5 py-2 bg-slate-100 dark:bg-slate-800/80 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
+                      <span className="text-xs font-bold font-mono text-slate-800 dark:text-slate-200">
+                        Track Courses ({cert.courses.length} Modules)
+                      </span>
+                      <span className="text-[10px] font-mono text-emerald-600 dark:text-emerald-400 font-semibold bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
+                        Curriculum
+                      </span>
+                    </div>
+                    <div className="p-2.5 grid grid-cols-1 sm:grid-cols-2 gap-1.5">
+                      {cert.courses.map((course, idx) => (
+                        <div 
+                          key={idx} 
+                          className="flex items-center gap-1.5 text-xs text-slate-700 dark:text-slate-300 px-2 py-1 rounded bg-white dark:bg-slate-800/60 border border-slate-200/60 dark:border-slate-700/60"
+                        >
+                          <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0"></div>
+                          <span className="truncate">{course}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
 
               <div className="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 space-y-3">
