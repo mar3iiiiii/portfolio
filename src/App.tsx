@@ -1,5 +1,6 @@
 import React from 'react';
 import { ThemeProvider } from './context/ThemeContext';
+import { LanguageProvider } from './context/LanguageContext';
 import { Navbar } from './components/Navbar';
 import { BackgroundAnimation } from './components/BackgroundAnimation';
 import { RevealOnScroll } from './components/RevealOnScroll';
@@ -16,7 +17,8 @@ import { Footer } from './components/Footer';
 export const App: React.FC = () => {
   return (
     <ThemeProvider>
-      <div className="relative min-h-screen bg-slate-50 dark:bg-[#070b14] text-slate-900 dark:text-slate-100 transition-colors duration-300">
+      <LanguageProvider>
+        <div className="relative min-h-screen bg-slate-50 dark:bg-[#070b14] text-slate-900 dark:text-slate-100 transition-colors duration-300">
         <BackgroundAnimation />
         <Navbar />
         <main>
@@ -44,7 +46,8 @@ export const App: React.FC = () => {
           </RevealOnScroll>
         </main>
         <Footer />
-      </div>
+        </div>
+      </LanguageProvider>
     </ThemeProvider>
   );
 };

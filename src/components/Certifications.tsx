@@ -7,17 +7,20 @@ import {
   Eye, 
   X, 
   FileCheck, 
-  ShieldCheck,
-  Calendar,
-  Hash,
-  Shield,
-  ShieldAlert,
-  CheckCircle2
+  ShieldCheck, 
+  Calendar, 
+  Hash, 
+  Shield, 
+  ShieldAlert, 
+  CheckCircle2 
 } from 'lucide-react';
-import { PORTFOLIO_DATA, CertificationItem } from '../data/portfolioData';
+import { useLanguage } from '../context/LanguageContext';
+import { getPortfolioData, CertificationItem } from '../data/portfolioData';
 
 export const Certifications: React.FC = () => {
-  const { certifications } = PORTFOLIO_DATA;
+  const { language } = useLanguage();
+  const data = getPortfolioData(language);
+  const { certifications, ui } = data;
   const [selectedCert, setSelectedCert] = useState<CertificationItem | null>(null);
 
   return (
@@ -28,22 +31,22 @@ export const Certifications: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono bg-red-500/10 text-red-600 dark:text-red-400 border border-red-500/20">
             <Award className="w-3.5 h-3.5" />
-            <span>Official Credentials & Documents</span>
+            <span>{ui.certifications.badge}</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-            Verified Certifications
+            {ui.certifications.title}
           </h2>
           <p className="text-base text-slate-600 dark:text-slate-400">
-            Authentic certificates verified from official industry leaders including Huawei ICT Academy, NTI, and ITIDA.
+            {ui.certifications.subtitle}
           </p>
         </div>
 
         {/* Certificate Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {certifications.map((cert) => (
             <div
               key={cert.id}
-              className="bg-white dark:bg-[#0c1222] border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:border-red-500/40 transition-all duration-300 flex flex-col justify-between group"
+              className="bg-white dark:bg-[#0c1222] border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:border-red-500/40 transition-all duration-300 flex flex-col justify-between group text-start"
             >
               <div className="space-y-4">
                 
@@ -64,7 +67,7 @@ export const Certifications: React.FC = () => {
                     />
                     <div className="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 flex items-center justify-center gap-2 text-white font-medium text-xs backdrop-blur-xs transition-opacity">
                       <Eye className="w-4 h-4" />
-                      <span>View Official Document</span>
+                      <span>{ui.certifications.inspectBtn}</span>
                     </div>
                   </div>
                 )}
@@ -81,7 +84,7 @@ export const Certifications: React.FC = () => {
                     {cert.track && (
                       <div className="mt-1.5 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-rose-500/10 text-rose-700 dark:text-rose-300 font-mono text-xs font-semibold border border-rose-500/20">
                         <Shield className="w-3.5 h-3.5 text-rose-500 shrink-0" />
-                        <span>Track: {cert.track}</span>
+                        <span>{ui.certifications.trackLabel} {cert.track}</span>
                       </div>
                     )}
                   </div>
@@ -97,21 +100,21 @@ export const Certifications: React.FC = () => {
                 {/* Verification Identifiers */}
                 <div className="space-y-1 text-xs text-slate-500 dark:text-slate-400 font-mono">
                   {cert.code && (
-                    <div className="flex items-center gap-1.5">
-                      <Hash className="w-3.5 h-3.5 text-slate-400" />
+                    <div className="flex items-center gap-1.5" dir="ltr">
+                      <Hash className="w-3.5 h-3.5 text-slate-400 shrink-0" />
                       <span>{cert.code}</span>
                     </div>
                   )}
                   {cert.issueDate && (
                     <div className="flex items-center gap-1.5">
-                      <Calendar className="w-3.5 h-3.5 text-slate-400" />
-                      <span>Issued: {cert.issueDate}</span>
+                      <Calendar className="w-3.5 h-3.5 text-slate-400 shrink-0" />
+                      <span>{ui.certifications.issuedLabel} {cert.issueDate}</span>
                     </div>
                   )}
                   {cert.hours && (
                     <div className="flex items-center gap-1.5">
-                      <Clock className="w-3.5 h-3.5 text-slate-400" />
-                      <span>{cert.hours}</span>
+                      <Clock className="w-3.5 h-3.5 text-slate-400 shrink-0" />
+                      <span>{ui.certifications.hoursLabel} {cert.hours}</span>
                     </div>
                   )}
                 </div>
@@ -125,7 +128,7 @@ export const Certifications: React.FC = () => {
                   <div className="space-y-1.5 pt-1">
                     <div className="text-[11px] font-bold font-mono text-slate-800 dark:text-slate-200 uppercase tracking-wider flex items-center gap-1.5">
                       <ShieldAlert className="w-3.5 h-3.5 text-red-500 shrink-0" />
-                      <span>Key Responsibilities & Competencies:</span>
+                      <span>{ui.certifications.responsibilitiesTitle}</span>
                     </div>
                     <ul className="space-y-1">
                       {cert.capabilities.map((cap, i) => (
@@ -143,10 +146,10 @@ export const Certifications: React.FC = () => {
                   <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/80 dark:bg-slate-900/60 overflow-hidden mt-3">
                     <div className="px-3.5 py-2 bg-slate-100 dark:bg-slate-800/80 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
                       <span className="text-xs font-bold font-mono text-slate-800 dark:text-slate-200">
-                        Track Courses ({cert.courses.length} Modules)
+                        {ui.certifications.curriculumTitle} ({cert.courses.length})
                       </span>
                       <span className="text-[10px] font-mono text-red-600 dark:text-red-400 font-semibold bg-red-500/10 px-2 py-0.5 rounded border border-red-500/20">
-                        Curriculum
+                        {language === 'ar' ? 'المنهج' : 'Curriculum'}
                       </span>
                     </div>
                     <div className="p-2.5 grid grid-cols-1 sm:grid-cols-2 gap-1.5">
@@ -171,7 +174,7 @@ export const Certifications: React.FC = () => {
                     className="w-full py-2 px-3 rounded-lg bg-red-500/10 hover:bg-red-500/20 text-red-700 dark:text-red-300 text-xs font-medium flex items-center justify-center gap-1.5 border border-red-500/20 transition-colors"
                   >
                     <FileCheck className="w-3.5 h-3.5" />
-                    <span>Inspect Certificate</span>
+                    <span>{ui.certifications.inspectBtn}</span>
                   </button>
                 )}
 
@@ -206,13 +209,14 @@ export const Certifications: React.FC = () => {
             <div className="flex items-center justify-between p-4 border-b border-slate-200 dark:border-slate-800">
               <div className="flex items-center gap-2">
                 <ShieldCheck className="w-5 h-5 text-red-500" />
-                <div>
+                <div className="text-start">
                   <h4 className="text-sm font-bold text-slate-900 dark:text-white">{selectedCert.name}</h4>
                   <p className="text-xs text-slate-500">{selectedCert.issuer}</p>
                 </div>
               </div>
               <button 
                 onClick={() => setSelectedCert(null)}
+                aria-label="Close"
                 className="p-1.5 rounded-lg text-slate-400 hover:text-slate-600 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800"
               >
                 <X className="w-5 h-5" />
@@ -230,14 +234,14 @@ export const Certifications: React.FC = () => {
             </div>
 
             <div className="p-4 bg-slate-50 dark:bg-slate-900/60 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs text-slate-500">
-              <span className="font-mono">{selectedCert.code || selectedCert.score}</span>
+              <span className="font-mono" dir="ltr">{selectedCert.code || selectedCert.score}</span>
               <a 
                 href={selectedCert.certificateImage} 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1 text-red-600 dark:text-red-400 hover:underline font-medium"
               >
-                <span>Open full image in new tab</span>
+                <span>{ui.certifications.openFullImage}</span>
                 <ExternalLink className="w-3.5 h-3.5" />
               </a>
             </div>

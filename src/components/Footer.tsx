@@ -1,9 +1,12 @@
 import React from 'react';
 import { ExternalLink, ShieldCheck } from 'lucide-react';
-import { PORTFOLIO_DATA } from '../data/portfolioData';
+import { useLanguage } from '../context/LanguageContext';
+import { getPortfolioData } from '../data/portfolioData';
 
 export const Footer: React.FC = () => {
-  const { personal } = PORTFOLIO_DATA;
+  const { language } = useLanguage();
+  const data = getPortfolioData(language);
+  const { personal, ui } = data;
 
   return (
     <footer className="py-12 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-[#070b14] text-slate-600 dark:text-slate-400">
@@ -18,40 +21,40 @@ export const Footer: React.FC = () => {
                 className="w-full h-full object-cover"
               />
             </div>
-            <div>
+            <div className="text-start">
               <span className="text-base font-bold text-slate-900 dark:text-white">
                 {personal.name}
               </span>
               <p className="text-xs text-slate-500">
-                Computer & Control Engineering • Class of 2027
+                {ui.footer.roleSub}
               </p>
             </div>
           </div>
 
-          <div className="flex items-center gap-6 text-sm">
-            <a href="#about" className="hover:text-red-500 transition-colors">About</a>
-            <a href="#skills" className="hover:text-red-500 transition-colors">Skills</a>
-            <a href="#projects" className="hover:text-red-500 transition-colors">Projects</a>
-            <a href="#certifications" className="hover:text-red-500 transition-colors">Certifications</a>
+          <div className="flex flex-wrap items-center justify-center gap-6 text-sm">
+            <a href="#about" className="hover:text-red-500 transition-colors">{ui.nav.about}</a>
+            <a href="#skills" className="hover:text-red-500 transition-colors">{ui.nav.skills}</a>
+            <a href="#projects" className="hover:text-red-500 transition-colors">{ui.nav.projects}</a>
+            <a href="#certifications" className="hover:text-red-500 transition-colors">{ui.nav.certifications}</a>
             <a href={personal.githubUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-red-500 transition-colors">
-              <span>GitHub</span>
+              <span>{ui.hero.githubBtn}</span>
               <ExternalLink className="w-3 h-3" />
             </a>
             <a href={personal.linkedinUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-red-500 transition-colors">
-              <span>LinkedIn</span>
+              <span>{ui.hero.linkedinBtn}</span>
               <ExternalLink className="w-3 h-3" />
             </a>
           </div>
         </div>
 
         <div className="pt-6 border-t border-slate-100 dark:border-slate-800/80 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
-          <div className="flex items-center gap-1.5">
-            <ShieldCheck className="w-4 h-4 text-red-500" />
-            <span>Built strictly from verified LinkedIn records (Zero synthetic filler).</span>
+          <div className="flex items-center gap-1.5 text-center sm:text-start">
+            <ShieldCheck className="w-4 h-4 text-red-500 shrink-0" />
+            <span>{ui.footer.privacyNotice}</span>
           </div>
 
-          <div>
-            © {new Date().getFullYear()} Ahmed Marei. All rights reserved.
+          <div className="text-center sm:text-end">
+            © {new Date().getFullYear()} {personal.name}. {ui.footer.rightsReserved}
           </div>
         </div>
 

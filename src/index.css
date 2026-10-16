@@ -9,9 +9,41 @@
   }
   body {
     font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
+
+  /* RTL Support & Arabic Typography */
+  [dir="rtl"] {
+    direction: rtl;
+    text-align: right;
+  }
+  [dir="ltr"] {
+    direction: ltr;
+    text-align: left;
+  }
+
+  [dir="rtl"] body {
+    font-family: 'Cairo', 'Segoe UI', Tahoma, system-ui, -apple-system, sans-serif;
+    /* Smooth connected Arabic character shaping */
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "kern" 1, "liga" 1;
+  }
+
   code, pre, .font-mono {
     font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* Ensure code, endpoints, SQL, numbers and URLs stay readable LTR in RTL mode */
+  [dir="rtl"] code,
+  [dir="rtl"] pre,
+  [dir="rtl"] .font-mono,
+  [dir="rtl"] input[type="email"],
+  [dir="rtl"] input[type="url"],
+  [dir="rtl"] .keep-ltr {
+    direction: ltr;
+    text-align: left;
+    unicode-bidi: isolate;
   }
 }
 
